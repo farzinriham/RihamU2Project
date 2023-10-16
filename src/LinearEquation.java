@@ -31,4 +31,10 @@ public class LinearEquation {
         double yInt = yOne - ((slope ()) * (xOne)); // b = y - mx
         return yInt;
     }
+
+    public double equation () {
+        int xDiff = xTwo-xOne;
+        int yDiff = yTwo-yOne;
+        String slopeFrac = String.valueOf(yDiff/xDiff);
+    }
 }
