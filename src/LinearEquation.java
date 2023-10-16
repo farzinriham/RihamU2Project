@@ -18,4 +18,17 @@ public class LinearEquation {
         double finRounded = Math.round(fin * 10.0) / 10.0;
         return finRounded;
     }
+
+    public double slope () {
+        double xDiff = xTwo-xOne;
+        double yDiff = yTwo-yOne;
+        double quotient = yDiff/xDiff;
+        double slope = Math.round(quotient * 100.0) / 100.0;
+        return slope;
+    }
+
+    public double yIntercept () {
+        double yInt = yOne - ((slope ()) * (xOne)); // b = y - mx
+        return yInt;
+    }
 }
