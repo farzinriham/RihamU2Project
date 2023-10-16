@@ -15,6 +15,7 @@ public class LinearEquation {
         double xDiff = Math.pow((xTwo-xOne), 2);
         double yDiff = Math.pow((yTwo-yOne), 2);
         double fin = Math.sqrt((xDiff + yDiff));
-        return fin;
+        double finRounded = Math.round(fin * 10.0) / 10.0;
+        return finRounded;
     }
 }
