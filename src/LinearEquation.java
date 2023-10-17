@@ -4,7 +4,7 @@ public class LinearEquation {
     private int yOne;
     private int yTwo;
 
-    public LinearEquation(int xOne, int xTwo, int yOne, int yTwo) {
+    public LinearEquation(int xOne, int xTwo, int yOne, int yTwo) { //constructor
         xOne = this.xOne;
         xTwo = this.xTwo;
         yOne = this.yTwo;
@@ -52,7 +52,10 @@ public class LinearEquation {
 
     public String lineInfo() {
         String twoPoints = "The two points are: (" + xOne + ", " + yOne + ") and (" + xTwo + ", " + yTwo + ")";
-
-        return
+        String equation = " The equation of the line between these points is: " + equation();
+        String slope = "The slope of this line is: " + slope();
+        String yInt = "The y-intercept of this line is: " + yIntercept();
+        String dist = "The distance between these points is: " + distance();
+        return "Here's some information regarding the two points inputted!\n" + twoPoints + "\n" + equation + "\n" + slope + "\n" + yInt + "\n" + dist;
     }
 }
