@@ -4,18 +4,26 @@ public class LinearEquation {
     private int yOne;
     private int yTwo;
 
-    public LinearEquation(int xOne, int xTwo, int yOne, int yTwo) { //constructor
+    public LinearEquation(int xOne, int xTwo, int yOne, int yTwo) { // constructor
         xOne = this.xOne;
         xTwo = this.xTwo;
         yOne = this.yTwo;
         yTwo = this.yTwo;
     }
 
+    public double roundedToHundredth(double toRound) {
+        return Math.round(toRound * 100) / 100.0;
+    }
+
+    public double roundedToTenth(double toRound) {
+        return Math.round(toRound * 10) / 10.0;
+    }
+
     public double distance() {
         double xDiff = Math.pow((xTwo - xOne), 2);
         double yDiff = Math.pow((yTwo - yOne), 2);
         double fin = Math.sqrt((xDiff + yDiff));
-        double finRounded = Math.round(fin * 10.0) / 10.0;
+        double finRounded = roundedToTenth(fin); // method
         return finRounded;
     }
 
@@ -23,30 +31,30 @@ public class LinearEquation {
         double xDiff = xTwo - xOne;
         double yDiff = yTwo - yOne;
         double quotient = yDiff / xDiff;
-        double slope = Math.round(quotient * 100.0) / 100.0;
+        double slope = roundedToHundredth(quotient); // method
         return slope;
     }
 
-    public double yIntercept() {
-        double yInt = yOne - ((slope()) * (xOne)); // b = y - mx
-        double yIntRounded = Math.round(yInt * 100.0) / 100.0;
+    public double yIntercept() { // b = y - mx,
+        double yInt = yOne - ((slope()) * (xOne)); // method
+        double yIntRounded = roundedToHundredth(yInt); // method
         return yIntRounded;
     }
 
     public String equation() {
         if (yTwo == yOne) {
-            return "y = " + yIntercept();
+            return "y = " + yIntercept(); // method
         } else {
             int xDiff = xTwo - xOne;
             int yDiff = yTwo - yOne;
             String slope = yDiff + "/" + xDiff;
-            return "y = " + slope + "x + " + yIntercept();
+            return "y = " + slope + "x + " + yIntercept(); // method
         }
     }
 
     public String coordinateForX(double x) { // y = mx + b
-        double mx = Math.round((x * slope()) * 100.0) / 100.0;
-        double y = mx + yIntercept();
+        double mx = roundedToHundredth((x * slope())); // method
+        double y = mx + yIntercept(); // method
         return "(" + x + ", " + y + ")";
     }
 
