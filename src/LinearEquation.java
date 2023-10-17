@@ -32,9 +32,14 @@ public class LinearEquation {
         return yInt;
     }
 
-    public double equation () {
-        int xDiff = xTwo-xOne;
-        int yDiff = yTwo-yOne;
-        String slopeFrac = String.valueOf(yDiff/xDiff);
+    public String equation () {
+        if (yTwo == yOne) {
+           return "y = " + yIntercept();
+        } else {
+            int xDiff = xTwo-xOne;
+            int yDiff = yTwo-yOne;
+            String slope = yDiff + "/" + xDiff;
+            return "y = " + slope + "x + " + yIntercept();
+        }
     }
 }
