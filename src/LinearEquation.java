@@ -29,7 +29,8 @@ public class LinearEquation {
 
     public double yIntercept() {
         double yInt = yOne - ((slope()) * (xOne)); // b = y - mx
-        return yInt;
+        double yIntRounded = Math.round(yInt * 100.0) / 100.0;
+        return yIntRounded;
     }
 
     public String equation() {
@@ -41,5 +42,17 @@ public class LinearEquation {
             String slope = yDiff + "/" + xDiff;
             return "y = " + slope + "x + " + yIntercept();
         }
+    }
+
+    public String coordinateForX(double x) { // y = mx + b
+        double mx = Math.round((x * slope()) * 100.0) / 100.0;
+        double y = mx + yIntercept();
+        return "(" + x + ", " + y + ")";
+    }
+
+    public String lineInfo() {
+        String twoPoints = "The two points are: (" + xOne + ", " + yOne + ") and (" + xTwo + ", " + yTwo + ")";
+
+        return
     }
 }
