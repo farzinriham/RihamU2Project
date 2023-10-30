@@ -4,11 +4,11 @@ public class LinearEquation {
     private int yOne;
     private int yTwo;
 
-    public LinearEquation(int xOne, int xTwo, int yOne, int yTwo) { // constructor
-        xOne = this.xOne;
-        xTwo = this.xTwo;
-        yOne = this.yTwo;
-        yTwo = this.yTwo;
+    public LinearEquation(int xOne, int yOne, int xTwo, int yTwo) { // constructor
+        this.xOne = xOne;
+        this.xTwo = xTwo;
+        this.yOne = yOne;
+        this.yTwo = yTwo;
     }
 
     public double roundedToHundredth(double toRound) {
