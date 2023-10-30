@@ -20,7 +20,7 @@ public class LinearEquationLogic {
         coordinates2 = scan.nextLine();
     }
 
-    private void getX1 () { //USE THE INDEX OF COMMAAAAAAA
+    private void getX1 () { //USE THE INDEX OF COMMAAAAAAA, also note that coordinates can be like (x, y), and don't forget negative numbers exist!!!!
         int lengthC1 = coordinates1.length();
         int idxComma = coordinates1.indexOf(",");
     }
