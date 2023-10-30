@@ -49,4 +49,16 @@ public class LinearEquationLogic {
         String yString = coordinates2.substring(idxComma+2, lengthC2-1);
         y2 = Integer.parseInt(yString);
     }
+
+    public String start() {
+        getCoordinates1();
+        getCoordinates2();
+        getX1();
+        getX2();
+        getY1();
+        getY2();
+        LinearEquation equation = new LinearEquation(x1, y1, x2, y2);
+        String lineInformation = equation.lineInfo();
+        return lineInformation;
+    }
 }
