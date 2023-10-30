@@ -22,6 +22,6 @@ public class LinearEquationLogic {
 
     private void getX1 () { //USE THE INDEX OF COMMAAAAAAA
         int lengthC1 = coordinates1.length();
-
+        int idxComma = coordinates1.indexOf(",");
     }
 }
