@@ -13,7 +13,7 @@ public class LinearEquationLogic {
     /* Getting coordinates: Please remember to use these in start() method */
 
     private void getCoordinates1 () {
-        System.out.print("Welcome to Equation Calculator! Please enter the first coordinate /example: (6, -2)/: ");
+        System.out.print("Please enter the first coordinate /example: (6, -2)/: ");
         coordinates1 = scan.nextLine();
     }
 
@@ -51,14 +51,21 @@ public class LinearEquationLogic {
     }
 
     public String start() {
-        getCoordinates1();
-        getCoordinates2();
-        getX1();
-        getX2();
-        getY1();
-        getY2();
-        LinearEquation equation = new LinearEquation(x1, y1, x2, y2);
-        String lineInformation = equation.lineInfo();
-        return lineInformation;
+        System.out.println("Welcome to Equation Calculator!");
+        String userInput = "";
+        while (!userInput.equals("no")) {
+            getCoordinates1();
+            getCoordinates2();
+            getX1();
+            getX2();
+            getY1();
+            getY2();
+            LinearEquation equation = new LinearEquation(x1, y1, x2, y2);
+            String lineInformation = equation.lineInfo();
+            System.out.println(lineInformation);
+            System.out.print("Would you like to enter coordinates again? TYPE no if not.");
+            userInput = scan.nextLine();
+        }
+        return "ew"; //MAKE SURE THIS DOESN'T PRINT, THIS STATEMENT SHOULDN'T BE REACHED.
     }
 }
