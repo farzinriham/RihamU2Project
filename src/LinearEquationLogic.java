@@ -18,7 +18,7 @@ public class LinearEquationLogic {
     }
 
     private void getCoordinates2 () {
-        System.out.print("Please enter the second coordinate /example: (6, -2)/: ");
+        System.out.print("Please enter the second coordinate /example: (6, -2)/ Please do not type the same x coordinate: ");
         coordinates2 = scan.nextLine();
     }
 
@@ -53,7 +53,7 @@ public class LinearEquationLogic {
     public String start() {
         System.out.println("Welcome to Equation Calculator!");
         String userInput = "";
-        while (!userInput.equals("no")) {
+        while (!userInput.equals("no")) { //ASK MR MILLER WHY IT WON'T STOP WHEN I SAY "no".
             getCoordinates1();
             getCoordinates2();
             getX1();
@@ -61,12 +61,12 @@ public class LinearEquationLogic {
             getY1();
             getY2();
             LinearEquation equation = new LinearEquation(x1, y1, x2, y2);
-            if (x1 == x2) {
+            while (x1 == x2) {
                 System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
                 System.out.println("Bruh, if you enter the same x coordinate for each pair, you'll get a vertical slope.");
                 System.out.println("Which means I'm gonna get an undefined value.");
                 System.out.println("Which means I'm gonna break.");
-                System.out.println("Use your brain, which I hope you have, and try again.");
+                System.out.println("Please use your brain, which I hope you have, and try again.");
                 System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
                 getCoordinates1();
                 getCoordinates2();
