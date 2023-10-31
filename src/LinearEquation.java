@@ -47,7 +47,7 @@ public class LinearEquation {
         } else { // I hate this EC.
             int xDiff = xTwo - xOne;
             int yDiff = yTwo - yOne;
-            if (xDiff == 0) {
+            if (yDiff == 0) {
                 if (yIntercept() == 0) {
                     return "y = 0";
                 } else if (yIntercept() < 0) {
