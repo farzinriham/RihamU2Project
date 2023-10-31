@@ -61,8 +61,25 @@ public class LinearEquationLogic {
             getY1();
             getY2();
             LinearEquation equation = new LinearEquation(x1, y1, x2, y2);
+            if (x1 == x2) {
+                System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
+                System.out.println("Bruh, if you enter the same x coordinate for each pair, you'll get a vertical slope.");
+                System.out.println("Which means I'm gonna get an undefined value.");
+                System.out.println("Which means I'm gonna break.");
+                System.out.println("Use your brain, which I hope you have, and try again.");
+                System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
+                getCoordinates1();
+                getCoordinates2();
+                getX1();
+                getX2();
+                getY1();
+                getY2();
+                equation = new LinearEquation(x1, y1, x2, y2);
+            }
+            System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
             String lineInformation = equation.lineInfo();
             System.out.println(lineInformation);
+            System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
             System.out.print("Would you like to enter coordinates again? TYPE no if not.");
             userInput = scan.nextLine();
         }

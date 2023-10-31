@@ -60,7 +60,7 @@ public class LinearEquation {
 
     public String lineInfo() {
         String twoPoints = "The two points are: (" + xOne + ", " + yOne + ") and (" + xTwo + ", " + yTwo + ")";
-        String equation = " The equation of the line between these points is: " + equation();
+        String equation = "The equation of the line between these points is: " + equation();
         String slope = "The slope of this line is: " + slope();
         String yInt = "The y-intercept of this line is: " + yIntercept();
         String dist = "The distance between these points is: " + distance();
