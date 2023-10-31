@@ -48,9 +48,9 @@ public class LinearEquation {
             int xDiff = xTwo - xOne;
             int yDiff = yTwo - yOne;
             if (yDiff == 0) {
-                if (yIntercept() == 0) {
+                if (yIntercept() == 0.0) {
                     return "y = 0";
-                } else if (yIntercept() < 0) {
+                } else if (yIntercept() < 0.0) {
                     double abs = Math.abs(yIntercept());
                     return "y = -" + abs;
                 } else {
@@ -59,9 +59,9 @@ public class LinearEquation {
             }
             if (yDiff % xDiff == 0) { // if slope is a whole number, if not, go to else if statement and work from there
                 if (yDiff / xDiff == 1) { // check if slope is 1- if not, check if it's -1
-                    if (yIntercept() == 0) {
+                    if (yIntercept() == 0.0) {
                         return "y = x";
-                    } else if (yIntercept() < 0) {
+                    } else if (yIntercept() < 0.0) {
                         double abs = Math.abs(yIntercept());
                         return "y = x - " + abs;
                     } else {
@@ -69,9 +69,9 @@ public class LinearEquation {
                     }
                 }
                 if (yDiff / xDiff == -1) { // check if slope is -1, if not, proceed to normal remaining code
-                    if (yIntercept() == 0) {
+                    if (yIntercept() == 0.0) {
                         return "y = -x";
-                    } else if (yIntercept() < 0) {
+                    } else if (yIntercept() < 0.0) {
                         double abs = Math.abs(yIntercept());
                         return "y = -x - " + abs;
                     } else {
@@ -79,22 +79,22 @@ public class LinearEquation {
                     }
                 }
                 int slope = yDiff / xDiff; // go here if not 1 or -1
-                if (yIntercept() == 0) {
+                if (yIntercept() == 0.0) {
                     return "y = " + slope;
-                } else if (yIntercept() < 0) {
+                } else if (yIntercept() < 0.0) {
                     double abs = Math.abs(yIntercept());
                     return "y = " + slope + "x - " + abs;
                 } else {
                     return "y = " + slope + "x + " + yIntercept();
                 }
-            } else if (yDiff < xDiff) { // here's where we go when slope isn't a whole number and <1. eg 2/3. 0 < slope < 1.
+            } else if (yDiff < xDiff || yDiff % xDiff != 0) { // here's where we go when slope isn't a whole number and <1. eg 2/3. 0 < slope < 1.
                 if (yDiff / xDiff < 0) { // if slope is negative... else go to the next statement
                     double yAbsDiff = Math.abs(yDiff);
                     double xAbsDiff = Math.abs(xDiff);
                     String slope = yAbsDiff + "/" + xAbsDiff;
                     if (yIntercept() == 0) {
                         return "y = -" + slope + "x";
-                    } else if (yIntercept() < 0) {
+                    } else if (yIntercept() < 0.0) {
                         double abs = Math.abs(yIntercept());
                         return "y = -" + slope + "x " + abs;
                     } else {
@@ -102,10 +102,16 @@ public class LinearEquation {
                     }
                 }
                 String slope = yDiff + "/" + xDiff;
+                if (yIntercept() < 0) {
+                    double abs = Math.abs(yIntercept());
+                    return "y = " + slope + "x - " + abs;
+                }
                 return "y = " + slope + "x + " + yIntercept();
             }
         }
-        return "this shouldn't print. Bruh.";
+        int xDiff = xTwo - xOne;
+        int yDiff = yTwo - yOne;
+        return yDiff + "/" + xDiff + "x";
     }
 
     public String coordinateForX(double x) { // y = mx + b

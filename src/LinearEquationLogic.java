@@ -54,43 +54,44 @@ public class LinearEquationLogic {
         System.out.println("Welcome to Equation Calculator!");
         String userInput = "";
         while (!userInput.equals("no")) { //ASK MR MILLER WHY IT WON'T STOP WHEN I SAY "no".
-            if (userInput.equals("no")) {
-                System.out.println("Alright then! Thanks for using Equation Calculator, see you next time!");
-            } else {
+            getCoordinates1();
+            getCoordinates2();
+            getX1();
+            getX2();
+            getY1();
+            getY2();
+            LinearEquation equation = new LinearEquation(x1, y1, x2, y2);
+            while (x1 == x2) {
+                System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
+                System.out.println("Bruh, if you enter the same x coordinate for each pair, you'll get a vertical slope.");
+                System.out.println("Which means I'm gonna get an undefined value.");
+                System.out.println("Which means I'm gonna break.");
+                System.out.println("Please use your brain, which I hope you have, and try again.");
+                System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
                 getCoordinates1();
                 getCoordinates2();
                 getX1();
                 getX2();
                 getY1();
                 getY2();
-                LinearEquation equation = new LinearEquation(x1, y1, x2, y2);
-                while (x1 == x2) {
-                    System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
-                    System.out.println("Bruh, if you enter the same x coordinate for each pair, you'll get a vertical slope.");
-                    System.out.println("Which means I'm gonna get an undefined value.");
-                    System.out.println("Which means I'm gonna break.");
-                    System.out.println("Please use your brain, which I hope you have, and try again.");
-                    System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
-                    getCoordinates1();
-                    getCoordinates2();
-                    getX1();
-                    getX2();
-                    getY1();
-                    getY2();
-                    equation = new LinearEquation(x1, y1, x2, y2);
-                }
-                System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
-                String lineInformation = equation.lineInfo();
-                System.out.println(lineInformation);
-                System.out.print("Enter an x value.");
-                double x = scan.nextDouble();
-                System.out.println(equation.coordinateForX(x));
-                System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
-                System.out.print("Would you like to enter coordinates again? TYPE no if not.");
-                scan.nextLine();
-                userInput = scan.nextLine();
+                equation = new LinearEquation(x1, y1, x2, y2);
             }
+            System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
+            String lineInformation = equation.lineInfo();
+            System.out.println(lineInformation);
+            System.out.print("Enter an x value.");
+            double x = scan.nextDouble();
+            scan.nextLine();
+            System.out.println(equation.coordinateForX(x));
+            System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
+            System.out.print("Would you like to enter coordinates again? TYPE no if not. ");
+            userInput = scan.nextLine();
+            if (userInput.equals("no")) {
+                System.out.println("Alright then! Thanks for using Equation Calculator, see you next time!");
+            }
+            //scan.nextLine();
         }
-        return "ew"; //MAKE SURE THIS DOESN'T PRINT, THIS STATEMENT SHOULDN'T BE REACHED.
+    return "i hate marcus, and this shouldn't print.";
     }
 }
+
